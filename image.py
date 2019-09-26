@@ -98,3 +98,5 @@ class StyleLoss(nn.Module):
         G = gram_matrix(input)
         self.loss = F.mse_loss(G, self.target)
         return input
+
+cnn = models.vgg19(pretrained=True).features.to(device).eval()
